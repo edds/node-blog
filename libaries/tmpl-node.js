@@ -26,7 +26,10 @@ http.ServerResponse.prototype.render = function( name, c1, c2, etc ) {
 function compile( str, name ) {
   var fn = new Function( "o",
     "var ret=[];with(o){ret.push('" +     
-    str.replace(/[\r\t\n]/g, " ")
+    str
+      .replace(/[\n]/g, "\\n")
+      .replace(/[\t]/g, "\\t")
+      .replace(/[\r]/g, "\\r")    
       .replace(/'(?=[^%]*%>)/g,"\t")
       .split("'").join("\\'")
       .split("\t").join("'")
