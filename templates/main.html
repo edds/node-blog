@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<title><%= pageTitle %><%= blogTitle %></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<h1><%= blogTitle %></h1>
+			<p><%= strapline %></p>
+		</header>
+
+		<%= content %>
+
+		<footer>
+			<p>&copy; <%= year %> <%= adminName %></p>
+		</footer>
+	</div>
+</body>
+</html>
